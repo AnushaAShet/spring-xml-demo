@@ -6,21 +6,11 @@
        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
     <bean id="actor" class="com.stackroute.springapplication.beans.Actor">
-        <property name="name" value="VijayDevarkondar"/>
+        <property name="name" value="Naani"/>
         <property name="gender" value="Male"/>
-        <property name="age" value="29"/>
+        <property name="age" value="31"/>
     </bean>
-    <bean id="movie" class="com.stackroute.springapplication.beans.Movie" autowire="byName">
-        <property name="actor">
-            <ref bean="actor"></ref>
-        </property>
-    </bean>
-    <bean id="movie2" class="com.stackroute.springapplication.beans.Movie" autowire="byType">
-        <property name="actor">
-            <ref bean="actor"></ref>
-        </property>
-    </bean>
-    <bean id="movie1" class="com.stackroute.springapplication.beans.Movie" autowire="constructor">
+    <bean id="movie" class="com.stackroute.springapplication.beans.Movie">
         <property name="actor">
             <ref bean="actor"></ref>
         </property>

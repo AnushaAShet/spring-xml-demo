@@ -1,8 +1,5 @@
 package com.stackroute.springapplication.beans;
 
-import org.springframework.beans.factory.annotation.Autowired;
-
-
 public class Actor {
     private String name;
     private String gender;

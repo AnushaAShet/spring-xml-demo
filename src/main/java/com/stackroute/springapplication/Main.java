@@ -1,6 +1,5 @@
 package com.stackroute.springapplication;
 
-import java.beans.beancontext.BeanContext;
 import com.stackroute.springapplication.beans.Movie;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
@@ -13,9 +12,6 @@ public class Main {
 
     }
 }
-
-
-
 
 
 

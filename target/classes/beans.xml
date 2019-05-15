@@ -5,23 +5,27 @@
        xsi:schemaLocation="
        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
-    <!-- bean definitions here -->
-    <bean id ="movie" class="com.stackroute.springapplication.beans.Movie" scope="prototype">
-
-        <constructor-arg name="movieName" value="The Avengers" />
-
-        <constructor-arg name="actorNAme" value="Robert Jr" />
-
-        <constructor-arg name="genre" value="Action" />
-
-
+    <bean id="actor" class="com.stackroute.springapplication.beans.Actor">
+        <property name="name" value="VijayDevarkondar"/>
+        <property name="gender" value="Male"/>
+        <property name="age" value="29"/>
+    </bean>
+    <bean id="movie" class="com.stackroute.springapplication.beans.Movie" autowire="byName">
+        <property name="actor">
+            <ref bean="actor"></ref>
+        </property>
+    </bean>
+    <bean id="movie2" class="com.stackroute.springapplication.beans.Movie" autowire="byType">
+        <property name="actor">
+            <ref bean="actor"></ref>
+        </property>
+    </bean>
+    <bean id="movie1" class="com.stackroute.springapplication.beans.Movie" autowire="constructor">
+        <property name="actor">
+            <ref bean="actor"></ref>
+        </property>
     </bean>
 
-    <bean id = "movie1" class="com.stackroute.springapplication.beans.Movie" scope="prototype">
-        <property name="movieName" value="URI"/>
-        <property name="actorNAme" value="Vicky Kaushal"/>
-        <property name="genre" value="Action"/>
-
-
-    </bean>
 </beans>
+
+

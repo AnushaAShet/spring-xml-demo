@@ -6,15 +6,17 @@
        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
     <bean id="actor" class="com.stackroute.springapplication.beans.Actor">
-        <property name="name" value="Naani"/>
+        <property name="name" value="VijayDevarkonda"/>
         <property name="gender" value="Male"/>
-        <property name="age" value="31"/>
+        <property name="age" value="29"/>
     </bean>
     <bean id="movie" class="com.stackroute.springapplication.beans.Movie">
         <property name="actor">
             <ref bean="actor"></ref>
         </property>
     </bean>
+    <bean id="beanLifecycleDemoBean" class="com.stackroute.springapplication.beans.BeanLifecycleDemoBean" init-method="customInit" destroy-method="customDestroy"/>
+
 
 </beans>
 

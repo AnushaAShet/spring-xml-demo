@@ -1,55 +1,52 @@
 package com.stackroute.springapplication.beans;
 
-public class Movie {
-        private String movieName;
-        private String actorNAme;
-        private String genre;
+import com.stackroute.springapplication.beans.Actor;
+import org.springframework.beans.factory.annotation.Autowired;
 
-        public Movie() {
+public class Movie
+{
+    private String movieName;
+    private String director;
+    private Actor actor;
 
-        }
-
-        public Movie(String movieName, String actorNAme, String genre) {
-            this.movieName = movieName;
-            this.actorNAme = actorNAme;
-            this.genre = genre;
-        }
-
-        public String getMovieName() {
-            return movieName;
-        }
-
-        public void setMovieName(String movieName) {
-            this.movieName = movieName;
-        }
-
-        public String getActorNAme() {
-            return actorNAme;
-        }
-
-        public void setActorNAme(String actorNAme) {
-            this.actorNAme = actorNAme;
-        }
-
-        public String getGenre() {
-            return genre;
-        }
-
-        public void setGenre(String genre) {
-            this.genre = genre;
-        }
-
-        public  String welcomeMsg () {
-            return "Welcome !!!";
-        }
-
-        @Override
-        public String toString() {
-            return "Movie Information "+
-                    "movieName='" + movieName + '\'' +
-                    ", actorNAme='" + actorNAme + '\'' +
-                    ", genre='" + genre + '\'' +
-                    '}';
-        }
+    public Movie() { }
+    @Autowired
+    public Movie(String movieName, String director, Actor actor1) {
+        this.movieName = movieName;
+        this.director = director;
+        this.actor = actor1;
     }
 
+    @Override
+    public String toString() {
+        return "Movie{" +
+                "movieName='" + movieName + '\'' +
+                ", director='" + director + '\'' +
+                ", actor=" + actor +
+                '}';
+    }
+
+    public String getMovieName() {
+        return movieName;
+    }
+
+    public void setMovieName(String movieName) {
+        this.movieName = movieName;
+    }
+
+    public String getDirector() {
+        return director;
+    }
+
+    public void setDirector(String director) {
+        this.director = director;
+    }
+
+    public Actor getActor() {
+        return actor;
+    }
+
+    public void setActor(Actor actor) {
+        this.actor = actor;
+    }
+}
